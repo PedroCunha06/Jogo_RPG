@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Tela {
     CharacteristicsClasse[] classes;
@@ -24,4 +25,28 @@ public class Tela {
 
     }
 
+    public CharacteristicsClasse getClasse(int index) {
+        if (index >= 0 && index < classes.length) {
+            return classes[index];
+        }
+        return null;
+    }
+
+    public CharacteristicsClasse escolherClasse(Scanner entrada) {
+        int classe;
+        CharacteristicsClasse choose = null;
+
+        do {
+            System.out.println("Now, you have to choose your class: \n");
+            TabelaCaracteristicas();
+            classe = entrada.nextInt();
+
+            choose = getClasse(classe - 1);
+
+            if(choose == null) {
+                System.out.println("Not found option");
+            }
+        } while (choose == null);
+        return choose;
+    }
 }
