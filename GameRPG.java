@@ -6,23 +6,23 @@ public class GameRPG {
     }
 
     public static void runGame() {
-        Scanner entrada = new Scanner(System.in);
+        Scanner enter = new Scanner(System.in);
         String player;
-        int opcao;
+        int option;
 
-        Tela menu = new Tela();
+        Screen menu = new Screen();
         do {
             System.out.println("\nWelcome to Middle Earth RPG!");
             System.out.println("Menu\n  1 -> Start Play \n  2 -> Exit");
-            opcao = entrada.nextInt();
+            option = enter.nextInt();
 
-            switch (opcao) {
+            switch (option) {
                 case 0:
                     break;
                 case 1:
                     System.out.println("Write your name: ");
-                    entrada.nextLine();
-                    player = entrada.nextLine();
+                    enter.nextLine();
+                    player = enter.nextLine();
                     System.out.printf("Bem vindo %s!\n", player);
                     chooseClass(menu);
                     break;
@@ -33,19 +33,20 @@ public class GameRPG {
 
                 default:
                     System.out.println("Not found option");
-                    opcao = 0;
+                    option = 0;
                     break;
             }
 
-        } while (opcao != 1 && opcao != 2);
+        } while (option != 1 && option != 2);
     }
 
-    public static void chooseClass(Tela menu) {
-        Scanner entrada = new Scanner(System.in);
-        CharacteristicsClasse choose = menu.escolherClasse(entrada);
+    public static void chooseClass(Screen menu) {
+        Scanner enter = new Scanner(System.in);
+        CharacteristicsClasse choose = menu.escolherClasse(enter);
 
-        if(choose != null) {
+        if (choose != null) {
             System.out.printf("You have chosen the %s", choose.getTipo());
-        }        
+        }
     }
+
 }
