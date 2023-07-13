@@ -1,9 +1,7 @@
-public class Enemies {
-    private float vida, ataque, defesa, magia;
-    private String tipo;
+public class Enemies extends CharacteristicsClasse {
 
-    CharacteristicsClasse[] enemies;
 
-    
-
+    public Enemies(String tipo, float vida, float ataque, float defesa, float magia, int number) {
+        super(tipo, vida, ataque, defesa, magia, number);
+    }
 }

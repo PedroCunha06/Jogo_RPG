@@ -1,7 +1,7 @@
 public class CharacteristicsClasse {
-    private int number;
-    private float vida, ataque, defesa, experiencia, magia;
-    private String tipo;
+    public float vida, ataque, defesa, experiencia, magia;
+    public String tipo;
+    public int number;
 
     public CharacteristicsClasse(String tipo, float vida, float ataque, float defesa, float experiencia, float magia) {
         this.tipo = tipo;
@@ -12,7 +12,7 @@ public class CharacteristicsClasse {
         this.magia = magia;
     }
 
-    public void CharacteristicsEnemies(String tipo, float vida, float ataque, float defesa, float magia, int number) {
+        public CharacteristicsClasse(String tipo, float vida, float ataque, float defesa, float magia, int number) {
         this.tipo = tipo;
         this.vida = vida;
         this.ataque = ataque;
@@ -45,4 +45,7 @@ public class CharacteristicsClasse {
         return this.magia;
     }
 
+    public int getNumber() {
+        return this.number;
+    }
 }

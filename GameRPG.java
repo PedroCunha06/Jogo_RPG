@@ -25,6 +25,7 @@ public class GameRPG {
                     player = enter.nextLine();
                     System.out.printf("Bem vindo %s!\n", player);
                     chooseClass(menu);
+                    System.out.println("Now, begin your first battle");
                     break;
 
                 case 2:
@@ -42,11 +43,10 @@ public class GameRPG {
 
     public static void chooseClass(Screen menu) {
         Scanner enter = new Scanner(System.in);
-        CharacteristicsClasse choose = menu.escolherClasse(enter);
+        Classes choose = menu.escolherClasse(enter);
 
         if (choose != null) {
             System.out.printf("You have chosen the %s", choose.getTipo());
         }
     }
-
 }
